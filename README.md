@@ -36,6 +36,14 @@ Front end para la implementación de workflows de observabilidad utilizando Apac
 ```python
 # create new project
 django-admin startproject <PROJECT_NAME>
+# create new app
+django-admin startapp <APP_NAME>
 # run development server
 python manage.py runserver
+# create required databases
+python manage.py migrate
+# create super user for admin panel
+python manage.py createsuperuser
+# update schemas
+python manage.py makemigrations
 ```

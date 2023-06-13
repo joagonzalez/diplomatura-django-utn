@@ -6,7 +6,7 @@ from django.http import HttpResponse
 def index(request):
     # return HttpResponse('Hello World!')
     params = {}
-    params['site_name'] = 'Observability Insights'
-    params['page'] = 'dashboards.html'
+    params['site_name'] = 'Observability Insights Index page'
+    params['page'] = 'index.html'
     
-    return render(request, 'dashboards/index.html', params)
+    return render(request, 'observability_workflows/index.html', params)

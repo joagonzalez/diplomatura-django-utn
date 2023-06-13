@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from observability_workflows import views
 
 urlpatterns = [
     path('dashboards/', include('dashboards.urls')),
     path('admin/', admin.site.urls),
+    path('', view=views.index, name='index'),
 ]

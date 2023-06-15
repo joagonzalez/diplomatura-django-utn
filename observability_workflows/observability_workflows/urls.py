@@ -19,6 +19,8 @@ from observability_workflows import views
 
 urlpatterns = [
     path('dashboards/', include('dashboards.urls')),
+    path('usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls, name='admin'),
     path('', view=views.index, name='index'),
+    path('accounts/', include('registration.backends.default.urls')),
 ]

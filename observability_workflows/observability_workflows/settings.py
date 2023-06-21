@@ -138,3 +138,16 @@ SITE_ID = 1
 # LOGIN
 LOGIN_REDIRECT_URL = '/dashboards'
 LOGIN_URL = 'django.contrib.auth.views.login'
+
+# debug_toolbar options
+if DEBUG:
+    MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]
+    INSTALLED_APPS += ["debug_toolbar"]
+    INTERNAL_IPS = ["127.0.0.1"] 
+    
+    import mimetypes
+    mimetypes.add_type("application/javascript", ".js", True)
+    
+    DEBUG_TOOLBAR_CONFIG = {
+        "INTERCEPT_REDIRECTS": False,
+    }

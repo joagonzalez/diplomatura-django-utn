@@ -7,8 +7,12 @@ migrate:
 makemigrations:
 	cd observability_workflows && python manage.py makemigrations
 
+tests: 
+	cd observability_workflows && python manage.py test -d --timing
+
 test:
-	python -m pytest 
+	# pytest -m "backend"
+	cd observability_workflows && python -m pytest -W ignore::DeprecationWarning -v # -rP
 
 install:
 	pip install -r requirements.txt

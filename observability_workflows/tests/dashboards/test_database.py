@@ -17,11 +17,11 @@ def test_create_product(create_product):
     assert product.product == "Arroz"
     
 @pytest.mark.django_db
-def test_change_state(product_1):
+def test_change_state_1(product_1):
     assert product_1.status == "Draft"
     
 @pytest.mark.django_db
-def test_change_state(product_2):
+def test_change_state_2(product_2):
     print(product_2.product)
     print(product_2.publish_date)
     assert product_2.status == "Retired"

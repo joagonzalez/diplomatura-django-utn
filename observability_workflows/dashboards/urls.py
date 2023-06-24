@@ -3,4 +3,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', views.index, name='dashboards'),
+    path('responsive/', views.responsive, name='responsive'),
 ]

@@ -1,0 +1,29 @@
+div{
+    position:relative;
+    width: 70px;
+    height: 70px;
+    background-color: aqua;
+    border: solid 2px orangered;
+}
+
+.two{
+    padding: 50px;
+}
+
+.button{
+    background-color: rgb(102, 200, 16);
+    border: solid 2px orangered;
+    display: block;
+    text-decoration: none;
+    width: 200px;
+    border-radius: 48px;
+    margin: 5px;
+    text-align: center;
+    padding-top: 20px;
+    font-weight: bold;
+    box-shadow: 9px 13px 10px 3px #000;
+}
+
+a:hover{
+    background-color: rgb(189, 78, 219);
+}

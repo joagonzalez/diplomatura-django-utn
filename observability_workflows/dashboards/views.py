@@ -10,3 +10,11 @@ def index(request):
     params['page'] = 'dashboards.html'
     
     return render(request, 'dashboards/index.html', params)
+
+def responsive(request):
+    # return HttpResponse('Hello World!')
+    params = {}
+    params['site_name'] = 'Responsive stylesheets'
+    params['page'] = 'responsive.html'
+    
+    return render(request, 'dashboards/responsive.html', params)

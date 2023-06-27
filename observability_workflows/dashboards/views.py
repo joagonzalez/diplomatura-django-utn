@@ -18,3 +18,19 @@ def responsive(request):
     params['page'] = 'responsive.html'
     
     return render(request, 'dashboards/responsive.html', params)
+
+def bootstrap(request):
+    # return HttpResponse('Hello World!')
+    params = {}
+    params['site_name'] = 'Responsive stylesheets using bootstrap'
+    params['page'] = 'bootstrap_styles.html'
+    
+    return render(request, 'dashboards/bootstrap_styles.html', params)
+
+def carrusel(request):
+    # return HttpResponse('Hello World!')
+    params = {}
+    params['site_name'] = 'Responsive stylesheets using bootstrap'
+    params['page'] = 'carrusel.html'
+    
+    return render(request, 'dashboards/carrusel.html', params)

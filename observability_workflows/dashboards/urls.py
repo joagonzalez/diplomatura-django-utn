@@ -6,4 +6,5 @@ urlpatterns = [
     path('responsive/', views.responsive, name='responsive'),
     path('bootstrap/', views.bootstrap, name='bootstrap'),
     path('carrusel/', views.carrusel, name='carrusel'),
+    path('modal/', views.modal, name='modal'),
 ]

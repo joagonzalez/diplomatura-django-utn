@@ -34,3 +34,11 @@ def carrusel(request):
     params['page'] = 'carrusel.html'
     
     return render(request, 'dashboards/carrusel.html', params)
+
+def modal(request):
+    # return HttpResponse('Hello World!')
+    params = {}
+    params['site_name'] = 'Responsive stylesheets using bootstrap'
+    params['page'] = 'modal.html'
+    
+    return render(request, 'dashboards/modal.html', params)

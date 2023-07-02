@@ -14,14 +14,14 @@ pipeline {
         stage('Installing packages') {
                 steps {
                     script {
-                        sh 'pip -r requirements.txt'
+                        sh 'pip install -r requirements.txt'
                     }
                 }
             }
         stage('Test') {
             steps {
                 echo 'Testing stage..'
-                sh 'cd observability_workflows && python -m pytest -W ignore::DeprecationWarning -v # -rP'
+                sh 'make test'
             }
         }
         stage('Build') {

@@ -31,6 +31,10 @@ cp -r  ~/.envs/diplomatura-django-utn/lib/python3.10/site-packages/django/contri
 ```
 
 ## Uso
+```bash
+make run
+make test
+```
 
 ## Estructura aplicacion
 

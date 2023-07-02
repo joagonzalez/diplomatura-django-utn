@@ -15,7 +15,7 @@ from dashboards.models import Product, Category
 fake = Faker()
 
 @pytest.fixture()
-def create_product(db):
+def create_product():
     product = Product(product="Arroz", publish_date=datetime.datetime.now())
     product.save()
     return product
@@ -26,7 +26,7 @@ def database_data():
     return 2
 
 @pytest.fixture()
-def create_product_factory(db):
+def create_product_factory():
     category = Category(name="cat1", slug="slug1")
     category.save()
     
@@ -49,7 +49,7 @@ def create_product_factory(db):
     return create_product
 
 @pytest.fixture()
-def product_1(db, create_product_factory):
+def product_1(create_product_factory):
     return create_product_factory(
                 "Draft",
                 "Product 1", 
@@ -57,7 +57,7 @@ def product_1(db, create_product_factory):
             )
     
 @pytest.fixture()
-def product_2(db, create_product_factory):
+def product_2(create_product_factory):
     return create_product_factory(
                 "Retired",
                 fake.name(), 

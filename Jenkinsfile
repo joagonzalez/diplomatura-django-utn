@@ -6,11 +6,19 @@ pipeline {
             DB_ENGINE    = 'sqlite'
         }
 
+    stage('Installing packages') {
+            steps {
+                script {
+                    sh 'pip -r requirements.txt'
+                }
+            }
+        }
+
     stages {
         stage('Test') {
             steps {
                 echo 'Testing stage..'
-                sh 'make test'
+                sh 'cd observability_workflows && python -m pytest -W ignore::DeprecationWarning -v # -rP'
             }
         }
         stage('Build') {

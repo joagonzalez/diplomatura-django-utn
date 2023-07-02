@@ -18,6 +18,16 @@ pipeline {
                     }
                 }
             }
+        stage('Preparing migrations and db schemas') {
+                steps {
+                    script {
+                        sh 'make makemigrations'
+                    }
+                    script {
+                        sh 'make migrate'
+                    }
+                }
+            }
         stage('Test') {
             steps {
                 echo 'Testing stage..'

@@ -1,3 +1,9 @@
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'observability_workflows.settings')
+
+import django
+django.setup()
+
 import pytest
 import datetime
 from faker import Faker

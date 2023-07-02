@@ -1,6 +1,9 @@
 pipeline {
-    agent any
-
+    
+    agent {
+        docker { image 'python:3.11.4' }
+    }
+    
     environment {
             DISABLE_AUTH = 'true'
             DB_ENGINE    = 'sqlite'

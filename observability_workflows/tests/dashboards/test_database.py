@@ -5,7 +5,7 @@ from dashboards.models import Product
 
 
 @pytest.fixture()
-def create_product(db):
+def create_product():
     product = Product(product="Arroz", publish_date=datetime.datetime.now())
     product.save()
     return product

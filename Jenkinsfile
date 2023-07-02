@@ -7,6 +7,7 @@ pipeline {
     environment {
             DISABLE_AUTH = 'true'
             DB_ENGINE    = 'sqlite'
+            DJANGO_SETTINGS_MODULE = 'observability_workflows.settings'
         }
 
 

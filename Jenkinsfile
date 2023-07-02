@@ -6,15 +6,15 @@ pipeline {
             DB_ENGINE    = 'sqlite'
         }
 
-    stage('Installing packages') {
-            steps {
-                script {
-                    sh 'pip -r requirements.txt'
-                }
-            }
-        }
 
     stages {
+        stage('Installing packages') {
+                steps {
+                    script {
+                        sh 'pip -r requirements.txt'
+                    }
+                }
+            }
         stage('Test') {
             steps {
                 echo 'Testing stage..'

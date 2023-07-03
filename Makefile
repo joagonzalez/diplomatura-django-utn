@@ -16,3 +16,6 @@ test:
 
 install:
 	pip install -r requirements.txt
+	
+sass:
+	cd observability_workflows/static_dev && sass --update scss:css

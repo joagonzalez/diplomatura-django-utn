@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block head_styles %}
+{% block outer_head %}
     {% block head %}
     {% endblock %}
 {% endblock %}
 
 {% block content %}
-    {% block container %}
+    {% block sidebar %}
+    {% endblock %}
+
+    {% block main %}
+    {% endblock %}
+
+    {% block footer %}
     {% endblock %}
 {% endblock %}

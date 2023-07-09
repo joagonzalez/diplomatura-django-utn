@@ -1,0 +1,10 @@
+@import "bootstrap/bootstrap";
+@import "variables";
+@import "header";
+@import "sidebars";
+@import "custom_sidebars";
+
+#grafana {
+    width: 100%;
+    height: 100%;
+}

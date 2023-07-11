@@ -7,6 +7,9 @@
 
 
 ----
+<img src="doc/img/img3.png" width="800">
+
+---
 
 **Contenido**
 - [Introduccion](#introduccion)
@@ -34,6 +37,10 @@ cp -r  ~/.envs/diplomatura-django-utn/lib/python3.10/site-packages/django/contri
 ```bash
 make run
 make test
+make migrate
+make makemigrations
+make install
+make sass
 ```
 
 ## Estructura aplicacion

@@ -137,7 +137,7 @@ REGISTRATION_AUTO_LOGIN = True
 SITE_ID = 1
 
 # LOGIN
-LOGIN_REDIRECT_URL = '/dashboards'
+LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = 'django.contrib.auth.views.login'
 
 # debug_toolbar options

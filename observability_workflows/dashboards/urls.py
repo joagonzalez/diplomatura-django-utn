@@ -2,9 +2,8 @@ from dashboards import views
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index, name='dashboards'),
-    path('responsive/', views.responsive, name='responsive'),
-    path('bootstrap/', views.bootstrap, name='bootstrap'),
-    path('carrusel/', views.carrusel, name='carrusel'),
-    path('modal/', views.modal, name='modal'),
+    path('', views.index, name='main'),
+    path('ecobici/', views.ecobici, name='ecobici'),
+    path('infrastructure/', views.infrastructure, name='infrastructure'),
+    path('usecases/', views.usecases, name='usecases'),
 ]

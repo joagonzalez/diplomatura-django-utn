@@ -1,44 +1,41 @@
+from django.db.models import Q
 from django.shortcuts import render
 from django.http import HttpResponse
+from dashboards.models import Dashboards
+from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
+
+@login_required(login_url='/accounts/login')
 def index(request):
-    # return HttpResponse('Hello World!')
     params = {}
-    params['site_name'] = 'Observability Insights'
-    params['page'] = 'dashboards.html'
+    params['page_name'] = 'Observability Insights'
+    params['page'] = 'index.html'
+    params['data'] = Dashboards.objects.all()
     
     return render(request, 'dashboards/index.html', params)
 
-def responsive(request):
-    # return HttpResponse('Hello World!')
+@login_required(login_url='/accounts/login')
+def ecobici(request):
     params = {}
-    params['site_name'] = 'Responsive stylesheets'
-    params['page'] = 'responsive.html'
+    params['site_name'] = 'Observability Insights - Ecobici'
+    params['page'] = 'ecobici.html'
     
-    return render(request, 'dashboards/responsive.html', params)
+    return render(request, 'dashboards/ecobici.html', params)
 
-def bootstrap(request):
-    # return HttpResponse('Hello World!')
+@login_required(login_url='/accounts/login')
+def infrastructure(request):
     params = {}
-    params['site_name'] = 'Responsive stylesheets using bootstrap'
-    params['page'] = 'bootstrap_styles.html'
+    params['site_name'] = 'Observability Insights - Infrastructure'
+    params['page'] = 'infrastructure.html'
     
-    return render(request, 'dashboards/bootstrap_styles.html', params)
+    return render(request, 'dashboards/infrastructure.html', params)
 
-def carrusel(request):
-    # return HttpResponse('Hello World!')
+@login_required(login_url='/accounts/login')
+def usecases(request):
     params = {}
-    params['site_name'] = 'Responsive stylesheets using bootstrap'
-    params['page'] = 'carrusel.html'
+    params['site_name'] = 'Observability Insights - Usecases'
+    params['page'] = 'usecases.html'
     
-    return render(request, 'dashboards/carrusel.html', params)
+    return render(request, 'dashboards/usecases.html', params)
 
-def modal(request):
-    # return HttpResponse('Hello World!')
-    params = {}
-    params['site_name'] = 'Responsive stylesheets using bootstrap'
-    params['page'] = 'modal.html'
-    
-    return render(request, 'dashboards/modal.html', params)

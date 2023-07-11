@@ -1,0 +1,55 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    height: 30px;
+    width: 100%;
+    border-style: dashed;
+    border-width: 1px;
+    border-bottom: 0px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+.body{
+    height: 500px;
+    width: 100%;
+    border-style: dashed;
+    border-bottom: 0px;
+    border-width: 1px;
+}
+
+.footer{
+    height: 30px;
+    width: 100%;
+    border-style: dashed;
+    border-width: 1px;
+    text-align: center;
+    font-weight: bold;
+    vertical-align: auto;
+}
+
+.column{
+    float: left;
+    height: 100%;
+    padding: 2px;
+}
+
+/* Clear floats after the columns */
+.left{
+    width: 24%;
+    border: 0px;
+    border-right: 1px;
+    border-style: dashed;
+}
+
+.right{
+    width: 75%;
+}
+
+.dashboard{
+    height: 400px;
+    width: 100%;
+}

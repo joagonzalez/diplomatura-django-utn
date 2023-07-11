@@ -7,6 +7,9 @@
 
 
 ----
+<img src="doc/img/img3.png" width="800">
+
+---
 
 **Contenido**
 - [Introduccion](#introduccion)
@@ -22,7 +25,23 @@
 
 Front end para la implementación de workflows de observabilidad utilizando Apache Airflow y Grafana como downstream dependencies.
 
+## Edicion de estilos
+Para poder editarlos y customizarlos luego, los colocamos en templates/
+```bash
+cp -r  ~/.envs/diplomatura-django-utn/lib/python3.10/site-packages/django/contrib/admin/templates/registration/ observability_workflows/templates/
+
+cp -r  ~/.envs/diplomatura-django-utn/lib/python3.10/site-packages/django/contrib/admin/templates/admin/ observability_workflows/templates/
+```
+
 ## Uso
+```bash
+make run
+make test
+make migrate
+make makemigrations
+make install
+make sass
+```
 
 ## Estructura aplicacion
 
@@ -36,6 +55,21 @@ Front end para la implementación de workflows de observabilidad utilizando Apac
 ```python
 # create new project
 django-admin startproject <PROJECT_NAME>
+# create new app
+django-admin startapp <APP_NAME>
 # run development server
 python manage.py runserver
+# create required databases
+python manage.py migrate
+# create super user for admin panel
+python manage.py createsuperuser
+# update schemas
+python manage.py makemigrations
+
 ```
+
+## Frontend templates
+- https://github.com/codedthemes/datta-able-bootstrap-dashboard
+
+
+Workaround migrations deletion: https://stackoverflow.com/questions/60521621/i-accidentally-deleted-the-migrations-folder-in-django

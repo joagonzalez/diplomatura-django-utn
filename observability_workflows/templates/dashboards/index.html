@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="accordion" id="accordionExample">
+  {% for item in data %}
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {{item}}
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>{{item.name}}.</strong><br \>
+        <b>Status: </b>{{item.status}}<br \>
+        <b>Type: </b>{{item.dashboard_type}}<br \>
+        <b>URL: </b><code>{{item.url}}</code><br \>
+        <b>Description: </b>{{item.description}}<br \>
+        <b>Published date: </b>{{item.published_date}}<br \>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

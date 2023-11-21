@@ -1,6 +1,6 @@
 import pytest
 import datetime
-from dashboards.models import Product
+from productos.models import Product
 
 
 

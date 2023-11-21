@@ -8,7 +8,7 @@ import pytest
 import datetime
 from faker import Faker
 from django.contrib.auth.models import User
-from dashboards.models import Product, Category
+from productos.models import Product, Category
 
 # file to implement test fixtures. Pytest imports them
 # automatically

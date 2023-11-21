@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 INSTALLED_APPS = [
     'django.contrib.sites',
@@ -39,8 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third-party
+    'captcha',
+    # custom apps
     'dashboards.apps.DashboardsConfig',
     'usuarios.apps.UsuariosConfig',
+    'productos.apps.ProductosConfig',
+    'contacto.apps.ContactoConfig',
 ]
 
 MIDDLEWARE = [

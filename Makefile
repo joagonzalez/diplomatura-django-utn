@@ -1,5 +1,8 @@
 run:
-	cd observability_workflows && python manage.py runserver 8000
+	cd observability_workflows && export DJANGO_DEBUG=1 && python manage.py runserver 8000
+
+run-prod:
+	cd observability_workflows && export DJANGO_DEBUG=0 && python manage.py runserver 8000
 
 migrate:
 	cd observability_workflows && python manage.py migrate
@@ -19,3 +22,6 @@ install:
 	
 sass:
 	cd observability_workflows/static_dev && sass --update scss:css
+
+clean:
+	rm -f ./pytest_cache

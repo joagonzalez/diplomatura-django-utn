@@ -24,6 +24,8 @@ urlpatterns = [
     path('', include('dashboards.urls')),
     path('usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls, name='admin'),
+    path('captcha/', include('captcha.urls')),
+    # path('contacto/', include('contacto.urls')),
     path('accounts/', include('registration.backends.default.urls'), name='login'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

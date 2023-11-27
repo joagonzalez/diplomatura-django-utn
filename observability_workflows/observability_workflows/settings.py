@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'django.contrib.sites',
     'registration',
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboards.apps.DashboardsConfig',
     'usuarios.apps.UsuariosConfig',
+    'contacto.apps.ContactoConfig',
 ]
 
 MIDDLEWARE = [

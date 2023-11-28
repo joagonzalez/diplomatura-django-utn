@@ -28,6 +28,9 @@ DEBUG = bool(int(os.getenv(key='DJANGO_DEBUG', default=0)))
 ALLOWED_HOSTS = ['*']
 
 
+# CAPTCHA CONFIG
+CAPTCHA_FONT_SIZE=32
+
 # Application definition
 
 INSTALLED_APPS = [

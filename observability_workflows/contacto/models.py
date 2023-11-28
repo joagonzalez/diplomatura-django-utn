@@ -20,29 +20,30 @@ class Consulta(models.Model):
     mail = models.EmailField(max_length=80, blank=True, null=True)
     answer_state = models.CharField(blank=False , max_length=15, null=True, choices=STATES, default=NOT_ANSWERED)
     phone = models.CharField(blank=False , max_length=50, null=True)
-    date = models.DateField(datetime.now, blank=True, editable=True)
+    date = models.DateField(default=datetime.now, blank=True, editable=True)
 
 
     def __str__(self):
         return self.name
     
-    def answer_state(self):
+    def answer_state_format(self):
         if self.answer_state == 'Contestada':
-            return format_html('<span style="background-color:#0a0, color:#fff, padding:5px;">{}</span>', self.answer_state)
+            return format_html('<span style="background-color:#0a0; color:#fff; padding:5px;">{}</span>', self.answer_state)
         elif self.answer_state == 'No Contestada':
-            return format_html('<span style="background-color:#a00, color:#fff, padding:5px;">{}</span>', self.answer_state) 
+            return format_html('<span style="background-color:#a00; color:#fff; padding:5px;">{}</span>', self.answer_state) 
         else:
-            return format_html('<span style="background-color:#F0B203, color:#fff, padding:5px;">{}</span>', self.answer_state)
+            return format_html('<span style="background-color:#F0B203; color:#fff; padding:5px;">{}</span>', self.answer_state)
 
 
 class Respuesta(models.Model):
-    query = models.ForeignKey(to=Consulta, blank=True, null=True, on_delete=models.CASCADE)
+    query = models.ForeignKey(Consulta(), blank=True, null=True, on_delete=models.CASCADE)
     answer = models.TextField(blank=False, null=False)
-    date = models.DateField(datetime.now, blank=True, editable=True)
+    date = models.DateField(default=datetime.now, blank=True, editable=True)
     
     def create_message(self):
         query_state = Consulta.objects.get(id=self.query.id)
         query_state.answer_state = 'Contestada'
+        query_state.save()
         # Aca triggereamos logica de eventos antes una respuesta enviada ademas de cambiar el estado
         # como TELEGRAM/EMAIL etc
     

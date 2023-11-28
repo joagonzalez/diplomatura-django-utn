@@ -1,11 +1,11 @@
-{% extends "layout.html" %}rel="stylesheet"
+{% extends "layout.html" %}
 {% block container %}
-        <b>Hello from template!</b><br \>
+        {{<b>Hello from template!</b><br \>
         <b>Site: {{site_name}} - Page: {{page}}</b>
         <a href="{% url 'dashboards' %}">dashboards</a><br \>
         <a href="{% url 'responsive' %}">responsive</a><br \>
         <a href="{% url 'bootstrap' %}">bootstrap</a><br \>
         <a href="{% url 'carrusel' %}">carrusel</a><br \>
         <a href="{% url 'modal' %}">modal</a><br \>
-        <a href="{% url 'admin:index' %}">admin panel</a><br \>
+        <a href="{% url 'admin:index' %}">admin panel</a><br \>}}
 {% endblock %}

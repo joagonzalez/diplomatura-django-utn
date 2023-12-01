@@ -28,11 +28,15 @@ DEBUG = bool(int(os.getenv(key='DJANGO_DEBUG', default=0)))
 ALLOWED_HOSTS = ['*']
 
 
+# CAPTCHA CONFIG
+CAPTCHA_FONT_SIZE=32
+
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.sites',
     'registration',
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboards.apps.DashboardsConfig',
     'usuarios.apps.UsuariosConfig',
+    'contacto.apps.ContactoConfig',
+    'tienda.apps.TiendaConfig',
 ]
 
 MIDDLEWARE = [

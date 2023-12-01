@@ -68,6 +68,11 @@ python manage.py makemigrations
 
 ```
 
+## Bootstrap templates (active using)
+- https://getbootstrap.com/docs/5.3/examples/
+- https://getbootstrap.com/docs/5.3/examples/sidebars/
+- https://getbootstrap.com/docs/5.3/examples/dashboard/
+
 ## Frontend templates
 - https://github.com/codedthemes/datta-able-bootstrap-dashboard
 

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'dashboards.apps.DashboardsConfig',
     'usuarios.apps.UsuariosConfig',
     'contacto.apps.ContactoConfig',
+    'tienda.apps.TiendaConfig',
 ]
 
 MIDDLEWARE = [

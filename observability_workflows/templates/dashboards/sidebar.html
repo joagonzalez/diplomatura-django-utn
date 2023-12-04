@@ -102,6 +102,16 @@
           </a>
         </li>
         <li>
+          {% if 'cargar' in page %}
+          <a href="http://localhost:8000/tienda/cargar" class="nav-link text-white active">
+          {% else %}
+          <a href="http://localhost:8000/tienda/cargar" class="nav-link text-white">
+          {% endif %}
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+            Tienda
+          </a>
+        </li>
+        <li>
           {% if 'admin' in page %}
           <a href="http://localhost:8000/admin" class="nav-link text-white active">
           {% else %}
@@ -116,7 +126,7 @@
       <div class="dropdown">
         <a href="http://localhost:8000/accounts/login" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           {% if request.user.is_authenticated %}
-          <img src="https://media.licdn.com/dms/image/C4D03AQH-x4VXkuXbMQ/profile-displayphoto-shrink_800_800/0/1516575622555?e=1694649600&v=beta&t=gDWMK54a33NhMNfFo4yQLfNhLLnlh7CowQCIzLaAYo0" alt="" width="32" height="32" class="rounded-circle me-2">
+          <img src="https://lh3.googleusercontent.com/a/ACg8ocLZyZZMJswZGRTlwg3FVYYXhqAl7D8DThuAMM38xc2SgYM=s376-c-no" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong>Joaquin Gonzalez</strong>
           {% else %}
           <img src="https://media.istockphoto.com/id/1087531642/vector/male-face-silhouette-or-icon-man-avatar-profile-unknown-or-anonymous-person-vector.jpg?s=612x612&w=0&k=20&c=FEppaMMfyIYV2HJ6Ty8tLmPL1GX6Tz9u9Y8SCRrkD-o=" alt="" width="32" height="32" class="rounded-circle me-2">

@@ -6,7 +6,7 @@ from captcha.fields import CaptchaField
 
 class ConsultaForm(ModelForm):
     """
-    La clase form usara el model instanciado y los fields
+    La clase form usara el model instanciado (mapeando form con modelo en db) y los fields
     indicados para decidir que mostrar y aplicar las validaciones
     correspondientes segun lo indicado en la creación del modelo 
     """

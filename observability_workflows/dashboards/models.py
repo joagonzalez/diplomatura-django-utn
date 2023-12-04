@@ -64,6 +64,7 @@ class Dashboards(models.Model):
     url = models.CharField(max_length=200)
     description = models.CharField(max_length=200)
     published_date = models.DateTimeField('Published Date')
+    image = models.ImageField(default='grafana_logo_icon_171048.png', blank=True, null=True)
 
         
     def __str__(self):

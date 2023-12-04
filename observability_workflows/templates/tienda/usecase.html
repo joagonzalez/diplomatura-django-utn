@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {{data}}
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>{{data.name}}.</strong><br \>
+        <img src="/media/{{data.image}}" height="64" width="64"><br \>
+        <b>Status: </b>{{data.status}}<br \>
+        <b>Type: </b>{{data.dashboard_type}}<br \>
+        <b>URL: </b><code>{{data.url}}</code><br \>
+        <b>Description: </b>{{data.description}}<br \>
+        <b>Published date: </b>{{data.published_date}}<br \>
+      </div>
+    </div>
+  </div>
+  <a href="{% url 'usecases' %}">Volver a Dashboards</a>
+</div>
+{% endblock %}

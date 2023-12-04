@@ -1,6 +1,4 @@
-from django.db.models import Q
 from django.shortcuts import render
-from django.http import HttpResponse
 from dashboards.models import Dashboards
 from django.contrib.auth.decorators import login_required
 

@@ -1,10 +1,10 @@
 from tienda import views
-# from tienda.views import index #, verImagenes
+from tienda.views import index, Usecases
 from django.urls import path
 
 urlpatterns = [
-    path('', views.index, name='tienda'),
-    path('cargar/', views.cargar_imagen, name='cargar'),
-    # path('ver/', VerImagenes.as_view(), name='verImagenes'),
-    # path('ver/<int:dashboard_id>/', views.ver_imagen, name='verImagene'),
+    path('', Usecases.as_view(), name='usecases'),
+    path('cargar/', views.cargar_dashboard, name='cargar'),
+    path('usecases/', Usecases.as_view(), name='usecases'),
+    path('usecase/<int:dashboard_id>/', views.usecase, name='usecase'),
 ]

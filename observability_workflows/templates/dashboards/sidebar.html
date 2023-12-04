@@ -82,10 +82,10 @@
           </a>
         </li>
         <li>
-          {% if 'usecase' in page %}
-          <a href="{% url 'usecases' %}" class="nav-link text-white active">
+          {% if 'cargar' in page %}
+          <a href="{% url 'cargar' %}" class="nav-link text-white active">
           {% else %}
-          <a href="{% url 'usecases' %}" class="nav-link text-white">
+          <a href="{% url 'cargar' %}" class="nav-link text-white">
           {% endif %}
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
             Usecase Management
@@ -93,19 +93,19 @@
         </li>
         <li>
           {% if not page %}
-          <a href="http://localhost:8000/contacto" class="nav-link text-white active">
+          <a href="{% url 'contacto' %}" class="nav-link text-white active">
           {% else %}
-          <a href="http://localhost:8000/contacto" class="nav-link text-white">
+          <a href="{% url 'contacto' %}" class="nav-link text-white">
           {% endif %}
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#contact"/></svg>
             Contacto
           </a>
         </li>
         <li>
-          {% if 'cargar' in page %}
-          <a href="http://localhost:8000/tienda/cargar" class="nav-link text-white active">
+          {% if 'usecases' in page %}
+          <a href="{% url 'usecases' %}" class="nav-link text-white active">
           {% else %}
-          <a href="http://localhost:8000/tienda/cargar" class="nav-link text-white">
+          <a href="{% url 'usecases' %}" class="nav-link text-white">
           {% endif %}
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
             Tienda

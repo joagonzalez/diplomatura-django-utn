@@ -24,4 +24,5 @@ class MensajeEnviado(View):
     def get(self, request):
         params = {}
         params['message'] = 'here goes the message'
+        params['page'] = 'mensaje_enviado.html'
         return render(request, self.template, params)

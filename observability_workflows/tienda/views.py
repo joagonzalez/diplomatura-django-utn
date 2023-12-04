@@ -1,9 +1,10 @@
 from requests import Request
+from django.http import Http404
+from django.views.generic import View 
 from django.shortcuts import render, redirect
 from tienda.forms import CargarForm
 from dashboards.models import Dashboards
 from django.contrib.auth.decorators import login_required
-
 
 @login_required(login_url='/accounts/login')
 def index(request: Request):
@@ -13,8 +14,8 @@ def index(request: Request):
     
     return render(request, 'tienda/index.html', params)
 
-
-def cargar_imagen(request: Request):
+@login_required(login_url='/accounts/login')
+def cargar_dashboard(request: Request):
     
     params = {}
     params['page'] = 'cargar.html'
@@ -44,9 +45,39 @@ def cargar_imagen(request: Request):
             
             new_dashboard.save()
             
-            return redirect(to='index')
+            return redirect(to='main')
     else:
         form = CargarForm()
         params['form'] = form
         
         return render(request, 'tienda/formulario.html', params)
+
+class Usecases(View): 
+    template = 'tienda/usecases.html'
+    
+    def get(self, request):
+        params = {}
+        params['site_name'] = 'Observability Insights - Ver Dashboards'
+        params['page'] = 'usecases.html'
+        
+        try:
+            data = Dashboards.objects.all()
+        except Dashboards.DoesNotExist:
+            raise Http404
+        params['data'] = data
+        
+        return render(request, self.template, params)
+
+def usecase(request, dashboard_id: int):
+    template = 'tienda/usecase.html'
+    params = {}
+    params['site_name'] = 'Observability Insights - Ver Dashboard <id: int>'
+    params['page'] = 'usecase.html'
+    
+    try:
+        data = Dashboards.objects.get(pk=dashboard_id)
+    except Dashboards.DoesNotExist:
+        raise Http404
+    params['data'] = data
+    
+    return render(request, template, params)

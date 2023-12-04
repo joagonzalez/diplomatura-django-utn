@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/usuarios/login')
 def index(request):
     params = {}
     params['page_name'] = 'Observability Insights'
@@ -13,7 +13,7 @@ def index(request):
     
     return render(request, 'dashboards/index.html', params)
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def ecobici(request):
     params = {}
     params['site_name'] = 'Observability Insights - Ecobici'
@@ -21,7 +21,7 @@ def ecobici(request):
     
     return render(request, 'dashboards/ecobici.html', params)
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def infrastructure(request):
     params = {}
     params['site_name'] = 'Observability Insights - Infrastructure'
@@ -29,7 +29,7 @@ def infrastructure(request):
     
     return render(request, 'dashboards/infrastructure.html', params)
 
-@login_required(login_url='/accounts/login')
+# @login_required(login_url='/accounts/login')
 def usecases(request):
     params = {}
     params['site_name'] = 'Observability Insights - Usecases'

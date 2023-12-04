@@ -6,7 +6,7 @@ from tienda.forms import CargarForm
 from dashboards.models import Dashboards
 from django.contrib.auth.decorators import login_required
 
-@login_required(login_url='/accounts/login')
+@login_required(redirect_field_name='/' , login_url='/usuarios/login')
 def index(request: Request):
     params = {}
     params['site_name'] = 'Observability Insights - Tienda'
@@ -14,7 +14,7 @@ def index(request: Request):
     
     return render(request, 'tienda/index.html', params)
 
-@login_required(login_url='/accounts/login')
+@login_required(redirect_field_name='/' , login_url='/usuarios/login')
 def cargar_dashboard(request: Request):
     
     params = {}
@@ -52,6 +52,7 @@ def cargar_dashboard(request: Request):
         
         return render(request, 'tienda/formulario.html', params)
 
+
 class Usecases(View): 
     template = 'tienda/usecases.html'
     
@@ -68,6 +69,7 @@ class Usecases(View):
         
         return render(request, self.template, params)
 
+@login_required(redirect_field_name='/' , login_url='/usuarios/login')
 def usecase(request, dashboard_id: int):
     template = 'tienda/usecase.html'
     params = {}

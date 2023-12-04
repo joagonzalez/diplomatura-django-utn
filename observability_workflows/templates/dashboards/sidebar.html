@@ -124,7 +124,7 @@
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="http://localhost:8000/accounts/login" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="{% url 'login' %}" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           {% if request.user.is_authenticated %}
           <img src="https://lh3.googleusercontent.com/a/ACg8ocLZyZZMJswZGRTlwg3FVYYXhqAl7D8DThuAMM38xc2SgYM=s376-c-no" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong>Joaquin Gonzalez</strong>
@@ -134,11 +134,11 @@
           {% endif %}
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>
           <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="{% url 'auth_logout' %}?next=/">Sign out</a></li>
+          <li><a class="dropdown-item" href="{% url 'logout' %}?next=/">Sign out</a></li>
         </ul>
       </div>
     </div>

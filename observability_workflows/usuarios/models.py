@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.conf import settings
-import time
 
 
 class DatosUsuarios(models.Model):
@@ -9,8 +7,9 @@ class DatosUsuarios(models.Model):
     Extiendo atributos de usuarios de django, a traves de FK
     usuarios
     """
-    usuario = models.ForeignKey(User, blank=False, null=True, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(User, blank=False, null=True, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to="producto/%Y/%m/%d", default="defecto/defecto.png", blank=True, null=True)
+    email = models.CharField(max_length=100, blank=False, null=False, default='johndoe@gmail.com')
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     fecha_nacimiento = models.DateField(blank=True, null=True)

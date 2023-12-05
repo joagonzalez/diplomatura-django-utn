@@ -12,8 +12,11 @@ from usuarios.models import DatosUsuarios
 
 @receiver(post_save, sender=User)
 def create_data_users(sender, instance, created, **kwargs):
-    DatosUsuarios.objects.create(usuario=instance)
-    print('New user successfully created!')
+    try:
+        DatosUsuarios.objects.create(usuario=instance)
+        print('New user successfully created!')
+    except Exception as e:
+        print('User already exists!')
     
 # @receiver(post_save, sender=User)
 # def update_data_users(sender, instance, created, **kwargs):

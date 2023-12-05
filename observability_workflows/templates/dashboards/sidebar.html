@@ -113,9 +113,9 @@
         </li>
         <li>
           {% if 'admin' in page %}
-          <a href="http://localhost:8000/admin" class="nav-link text-white active">
+          <a href="http://localhost:8000/admin" target="_blank" class="nav-link text-white active">
           {% else %}
-          <a href="http://localhost:8000/admin" class="nav-link text-white">
+          <a href="http://localhost:8000/admin" target="_blank" class="nav-link text-white">
           {% endif %}
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
             Admin
@@ -138,7 +138,11 @@
           <li><a class="dropdown-item" href="#">Profile</a></li>
           <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
           <li><hr class="dropdown-divider"></li>
+          {% if request.user.is_authenticated %}
           <li><a class="dropdown-item" href="{% url 'logout' %}?next=/">Sign out</a></li>
+          {% else %}
+          <li><a class="dropdown-item" href="{% url 'login' %}?next=/">Sign In</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>

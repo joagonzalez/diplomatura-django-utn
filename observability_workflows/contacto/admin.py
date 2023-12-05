@@ -1,6 +1,7 @@
 from django.contrib import admin
+from django.core import serializers
+from django.http import HttpResponse
 from contacto.models import Consulta, Respuesta
-
 
 
 class RespuestaAdmin(admin.TabularInline):
@@ -19,6 +20,13 @@ class ConsultaAdmin(admin.ModelAdmin):
             ]
     
     list_filter = ['answer_state', 'date']
+    actions = ['export_json']
+    
+    def export_json(self, request, queryset):
+        response = HttpResponse(content_type="application/json")
+        serializers.serialize('json', queryset=queryset, stream=response)
+        
+        return response
 
 
 admin.site.register(Consulta, ConsultaAdmin)

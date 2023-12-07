@@ -83,3 +83,40 @@ def usecase(request, dashboard_id: int):
     params['data'] = data
     
     return render(request, template, params)
+
+@login_required(redirect_field_name='/' , login_url='/usuarios/login')
+def scroll(request):
+    template = 'tienda/scroll_frame.html'
+    params = {}
+    params['site_name'] = 'Observability Insights - Animacion con GreenSock'
+    params['page'] = 'scroll_frame.html'
+    
+    
+    return render(request, template, params)
+
+def scroll_raw(request):
+    template = 'tienda/scroll.html'
+    params = {}
+    params['site_name'] = 'Observability Insights - Animacion con GreenSock'
+    params['page'] = 'scroll.html'
+    
+    
+    return render(request, template, params)
+
+def landing(request):
+    template = 'tienda/scroll_frame.html'
+    params = {}
+    params['site_name'] = 'Observability Insights - Landing Page Template'
+    params['page'] = 'scroll_frame.html'
+    
+    
+    return render(request, template, params)
+
+def landing_raw(request):
+    template = 'tienda/landing.html'
+    params = {}
+    params['site_name'] = 'Observability Insights - Animacion con GreenSock'
+    params['page'] = 'landing.html'
+    
+    
+    return render(request, template, params)

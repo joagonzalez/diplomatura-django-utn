@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
+        <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/EasePack.min.js"></script>
+        
+        <title>
+            Timeline test
+        </title>
+        <style>
+            #container {
+                width:960px;
+                 margin:auto;
+               }
+               #aaa {
+                 width: 50%;
+                 background:black;
+                 margin:auto;
+                 color:white;
+                 padding:10px;
+               }
+               #first {
+                 width: 100%; 
+                 background:grey;
+                 padding:10px;
+                 margin:auto;
+                 display:static;
+               }
+               #first.active {
+                 position: fixed;
+                 top: 0;
+                 left: 0;
+               }
+               .THIRD {
+                 z-index:12000;
+                 position:fixed;
+                 width:100%;
+               }
+                
+               #second {
+                 width:20%;
+                 background:darkblue;
+                 color:white;
+                 margin:auto;
+                 padding:10px;
+               }
+               #bottom_bottom {
+                 text-align:center;
+                 background:red;
+                 color:white;
+                 padding:10px;
+                 margin:0px;
+               }
+        </style>
+    </head>
+    
+    <body>
+        <div id="container">
+        <div id="aaa">
+        <div>=======================================</div>
+        <p>Just here to fill space a bit</p>
+        <div>=======================================</div>
+        <div>=======================================</div>
+        <div>=======================================</div>
+        <div>=======================================</div>
+        
+        </div>
+        
+        <div id="first" style="width:100%;" class="added_class_wondering_if_one_had_to_be_here">
+        <div>=======================================</div>
+        <div>=======================================</div>
+        <div>=======================================</div>
+        <div>=======================================</div>
+        <div>=======================================</div>
+        </div>
+        
+        <div id="second">
+        
+        <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In placerat dolor et molestie elementum. Pellentesque et mauris malesuada, gravida arcu nec, dapibus mi. Nunc placerat sapien eu vulputate tempus. Vivamus nisi ex, efficitur nec fermentum a, placerat eu sapien. Quisque viverra mauris vitae bibendum aliquet. Phasellus mattis magna vitae dolor consequat, vel vehicula neque commodo. Donec in ultrices neque. Etiam a lacus ligula. Quisque eleifend sapien mi, a placerat lectus vulputate quis. Cras id tempus mauris.
+        </p>
+        <p>
+
+    Nulla convallis non lorem sed fringilla. Vestibulum sodales, erat id convallis egestas, felis lectus tempus ipsum, non laoreet augue mi egestas ipsum. Sed ultricies dui ac nisi dignissim varius. Fusce bibendum rhoncus diam. Maecenas molestie nisl non lacus iaculis, quis tristique mi venenatis. Donec mi dolor, fermentum in hendrerit quis, semper ut purus. Pellentesque accumsan ex non sem semper, porta tempus arcu rutrum. Pellentesque libero enim, lobortis et arcu a, imperdiet cursus felis. Proin id nisl et sapien vulputate cursus. Suspendisse consequat vehicula dui eget venenatis. Quisque condimentum neque non nulla aliquam cursus. Cras tortor lectus, venenatis id elit quis, bibendum iaculis tortor. Nullam tempus varius orci, nec posuere eros bibendum quis. Duis gravida mauris et leo efficitur facilisis vitae a turpis.
+    </p>
+        <p>
+        
+    Suspendisse dapibus est quam, a interdum massa cursus et. Phasellus et dignissim purus. Suspendisse turpis dolor, sagittis eu dapibus non, dapibus ut enim. In venenatis, enim quis scelerisque fermentum, urna erat semper nunc, vitae imperdiet nunc ex eget mauris. Sed rutrum diam id lacinia tempus. Suspendisse consequat varius ipsum quis tristique. Pellentesque sed augue sem. Fusce tempus pretium rhoncus. Phasellus non aliquet dui. Etiam ante tortor, tincidunt eu vulputate nec, euismod non massa. Suspendisse potenti.
+    </p>
+        <p>
+        
+    Ut eleifend elit dictum dui efficitur, non scelerisque lectus egestas. Etiam lacinia pellentesque erat sed placerat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis neque, tempor in velit vel, iaculis facilisis diam. Pellentesque eget dolor orci. Duis dolor nisl, imperdiet a leo sed, gravida hendrerit tellus. Donec finibus libero eget rutrum pellentesque.
+    </p>
+        <p>
+        
+    Mauris sed mauris facilisis, sollicitudin lorem ut, tempor massa. Sed nec mi id ex facilisis iaculis in non magna. Integer nibh est, elementum vel augue tincidunt, euismod facilisis nulla. Nulla mattis nec elit id tincidunt. Nullam consectetur eros non tempus blandit. Suspendisse massa ipsum, vestibulum sed feugiat sit amet, porttitor non lorem. Nulla bibendum erat sed leo ultrices convallis. Aenean nec ornare sapien. Nulla elementum posuere eros, vel interdum risus aliquam ut.
+    </p>
+    
+        </div>
+        
+        
+        
+        <div id="bottom_bottom">THIS IS THE ENDTRIGGER</div>
+        
+        </div>
+    </body>
+    <script>
+        gsap.registerPlugin(Flip, ScrollTrigger);
+
+        const first = document.querySelector("#first"),
+            second = document.querySelector("#second");
+
+        const trigger = ScrollTrigger.create({
+        trigger: first,
+        start: "top top",
+        end: "+=1", // we don't need anything long - all we care about is the initial trigger point since we're only using onEnter and onLeaveBack
+        markers: true,
+        onEnter: () => setState(true, true),
+        onLeaveBack: () => setState(false, true)
+        });
+
+        function setState(active, flip) {
+        const state = Flip.getState(first); // record the state
+        if (active) {
+            first.classList.add("active");
+            second.style.marginTop = first.offsetHeight + "px"; // push "#second" down by the height of the first because it gets taken out of the document flow with position: fixed
+        } else {
+            first.classList.remove("active");
+            second.style.marginTop = "0px";
+        }
+        if (flip) { // flip if we need to
+            Flip.from(state, {duration: 0.5});
+        }
+        }
+
+        // to make it responsive, we've gotta revert the state during ScrollTrigger.refresh() so that things are measured properly:
+        ScrollTrigger.addEventListener("refreshInit", () => setState(false, false));
+        ScrollTrigger.addEventListener("refresh", () => {
+        if (trigger.progress !== 0) { // if the user has scrolled PAST the trigger point, set the state accordingly. 
+            setState(true, false);
+        }
+        });
+    </script>
+</html>

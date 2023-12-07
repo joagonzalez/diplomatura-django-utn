@@ -112,10 +112,20 @@
           </a>
         </li>
         <li>
-          {% if 'admin' in page %}
-          <a href="http://localhost:8000/admin" class="nav-link text-white active">
+          {% if 'landing' in page %}
+          <a href="{% url 'landing' %}" class="nav-link text-white active">
           {% else %}
-          <a href="http://localhost:8000/admin" class="nav-link text-white">
+          <a href="{% url 'landing' %}" class="nav-link text-white">
+          {% endif %}
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+            Landing Page
+          </a>
+        </li>
+        <li>
+          {% if 'admin' in page %}
+          <a href="http://localhost:8000/admin" target="_blank" class="nav-link text-white active">
+          {% else %}
+          <a href="http://localhost:8000/admin" target="_blank" class="nav-link text-white">
           {% endif %}
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
             Admin
@@ -124,7 +134,7 @@
       </ul>
       <hr>
       <div class="dropdown">
-        <a href="http://localhost:8000/accounts/login" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <a href="{% url 'login' %}" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           {% if request.user.is_authenticated %}
           <img src="https://lh3.googleusercontent.com/a/ACg8ocLZyZZMJswZGRTlwg3FVYYXhqAl7D8DThuAMM38xc2SgYM=s376-c-no" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong>Joaquin Gonzalez</strong>
@@ -134,11 +144,15 @@
           {% endif %}
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-          <li><a class="dropdown-item" href="#">New project...</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>
           <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="{% url 'register' %}">Register</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="{% url 'auth_logout' %}?next=/">Sign out</a></li>
+          {% if request.user.is_authenticated %}
+          <li><a class="dropdown-item" href="{% url 'logout' %}?next=/">Sign out</a></li>
+          {% else %}
+          <li><a class="dropdown-item" href="{% url 'login' %}?next=/">Sign In</a></li>
+          {% endif %}
         </ul>
       </div>
     </div>

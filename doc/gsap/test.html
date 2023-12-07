@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/Flip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
+        <!-- RoughEase, ExpoScaleEase and SlowMo are all included in the EasePack file -->    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/EasePack.min.js"></script>
+        
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                min-height: 100vh;
+                flex-direction: column;
+              }
+            .box {
+                border: solid 0px;
+                width: 150px;
+                height: 150px;
+            }
+
+            .green {
+                background-color: green;
+            }
+
+            .purple {
+                background-color: purple;
+            }
+
+            .blue {
+                background-color: blue;
+            }
+        </style>
+
+        <title>GSAP example</title>
+    </head>
+    <body>
+        <div class="box green">dcsc</div>
+        <div class="box purple">dsc</div>
+        <div class="box blue">sdcsd</div>
+
+        <script>
+            // target the element with a class of "green" - rotate and move TO 100px to the left over the course of 1 second. 
+            gsap.to(".green", {rotation: 360, x: 100, duration: 1});
+            // target the element with a class of "purple" - rotate and move FROM 100px to the left over the course of 1 second. 
+            gsap.from(".purple", {rotation: -360, x: -100, duration: 1});
+            // target the element with a class of "blue" - rotate and move FROM 100px to the left, TO 100px to the right over the course of 1 second. 
+            gsap.fromTo(".blue", {x: -100},{rotation: 360, x: 100, duration: 1});
+        </script>
+    </body>
+</html>
+
+

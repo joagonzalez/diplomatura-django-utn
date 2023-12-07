@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <div class="form-control" style="text-align: left; width: 50%;">
+        <form id="login" action="" method="post">
+            {% csrf_token %}
+
+            <label for="id_username">Username:</label><br \>
+            <input class="form-control" type="text" name="username" maxlength="200" required="" id="username"><br \>
+
+            <label for="id_password">Password:</label><br \>
+            <input class="form-control" type="password" name="password" maxlength="200" required="" id="password"><br \>
+
+            <div class="col-4" style="padding-right: 30px;padding-top: 10px;">
+                <button type="submit" class="col-12 btn btn-danger">Enviar</button>
+            </div>
+
+            {% if 'failed' in login_status %}
+                <div class="col-4">
+                Login incorrecto! intentelo de nuevo.<br \>
+                </div>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

@@ -135,6 +135,30 @@ class SearchDashboard(View):
             for d in dashboard:
                 data = {}
                 data['label'] = d.name
+                data['image'] = str(d.image)
+                data['description'] = d.description
+                result.append(data)
+        else:
+           result.append('failed') 
+            
+        mimetype = 'application/json'
+        
+        return HttpResponse(json.dumps(result), mimetype)
+
+class SearchDashboardAsync(View):
+    def get(self, request):
+        result = []
+        if request.is_ajax:
+            word = request.GET['val']
+            print(word)
+            
+            dashboard = Dashboards.objects.filter(name__icontains=word)
+            
+            for d in dashboard:
+                data = {}
+                data['label'] = d.name
+                data['image'] = str(d.image)
+                data['description'] = d.description
                 result.append(data)
         else:
            result.append('failed') 

@@ -1,8 +1,10 @@
+import json
+from django.http import HttpResponse
 from requests import Request
 from django.http import Http404
 from django.views.generic import View 
 from django.shortcuts import render, redirect
-from tienda.forms import CargarForm
+from tienda.forms import CargarForm, SearchDashboardForm
 from dashboards.models import Dashboards
 from django.contrib.auth.decorators import login_required
 
@@ -118,5 +120,59 @@ def landing_raw(request):
     params['site_name'] = 'Observability Insights - Animacion con GreenSock'
     params['page'] = 'landing.html'
     
+    
+    return render(request, template, params)
+
+class SearchDashboard(View):
+    def get(self, request):
+        result = []
+        if request.is_ajax:
+            word = request.GET.get('term', '')
+            print(word)
+            
+            dashboard = Dashboards.objects.filter(name__icontains=word)
+            
+            for d in dashboard:
+                data = {}
+                data['label'] = d.name
+                data['image'] = str(d.image)
+                data['description'] = d.description
+                result.append(data)
+        else:
+           result.append('failed') 
+            
+        mimetype = 'application/json'
+        
+        return HttpResponse(json.dumps(result), mimetype)
+
+class SearchDashboardAsync(View):
+    def get(self, request):
+        result = []
+        if request.is_ajax:
+            word = request.GET['val']
+            print(word)
+            
+            dashboard = Dashboards.objects.filter(name__icontains=word)
+            
+            for d in dashboard:
+                data = {}
+                data['label'] = d.name
+                data['image'] = str(d.image)
+                data['description'] = d.description
+                result.append(data)
+        else:
+           result.append('failed') 
+            
+        mimetype = 'application/json'
+        
+        return HttpResponse(json.dumps(result), mimetype)
+
+def search(request):
+    template = 'tienda/buscador.html'
+    search = SearchDashboardForm()
+    params = {}
+    params['site_name'] = 'Observability Insights - Busqueda con AJAX'
+    params['page'] = 'search.html'
+    params['search'] = search
     
     return render(request, template, params)

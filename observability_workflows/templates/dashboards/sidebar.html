@@ -112,6 +112,16 @@
           </a>
         </li>
         <li>
+          {% if 'search' in page %}
+          <a href="{% url 'search' %}" class="nav-link text-white active">
+          {% else %}
+          <a href="{% url 'search' %}" class="nav-link text-white">
+          {% endif %}
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+            Search
+          </a>
+        </li>
+        <li>
           {% if 'landing' in page %}
           <a href="{% url 'landing' %}" class="nav-link text-white active">
           {% else %}

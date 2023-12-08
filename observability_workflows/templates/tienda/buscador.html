@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block main %}
+  <div class="form-control" style="text-align: left; width: 50%;">
+    <form action="" id="search-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+      <div class="col-4" style="padding-top: 10px;">
+        {{ search }}
+      </div>
+      <div class="col-2" style="padding-right: 30px; padding-top: 10px;">
+          <button type="submit" class="col-12 btn btn-danger">Enviar</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    $( "#autocomplete" ).autocomplete({
+      source: "http://localhost:8000/tienda/search_dashboard/"
+    });
+  </script>
+{% endblock %}

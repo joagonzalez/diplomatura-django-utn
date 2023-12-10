@@ -141,3 +141,61 @@ Unidad 4: Consultas asíncronas - AJAX
 - Recuperamos productos con ajax: https://www.youtube.com/watch?v=mza7o-5eY9w&t=1s
 
 ### Django Nivel Avanzado - En producción
+
+### Modulo 1
+
+Unidad 1: 
+- Introducción y programas a instalar: https://www.youtube.com/watch?v=Wp7z3GxO7_Y
+- Creamos una maquina virtual: https://www.youtube.com/watch?v=i4p4YcR6SK0
+- Configuramos interfaz de máquina virtual: https://www.youtube.com/watch?v=xZJqPY8lK94
+- Instalamos servidor apache I: https://www.youtube.com/watch?v=e36Fbg7yGcs
+- Instalamos servidor apache II: https://www.youtube.com/watch?v=fs1jPBGP8II
+- Instalamos servidor apache III: https://www.youtube.com/watch?v=KGsIVpNs3Qg
+- Instalación de módulos, creación de proyecto, configuración de permisos, actualización de wsgi.py y apache: https://www.youtube.com/watch?v=6CO05SLKhvw
+- Creación de carpeta media y static – reconfiguración de apache: https://www.youtube.com/watch?v=Judl8O4qY_M
+- Creamos conexión ftp y pasamos archivos desde nuestra app en windows: https://www.youtube.com/watch?v=AJAsTJFBFg4
+
+Unidad 2: 
+- Transacciones: https://www.youtube.com/watch?v=_jBH32NFRXc
+- Triggers: https://www.youtube.com/watch?v=v8ub1CZjXfI
+- Instalamos MariaDB: https://www.youtube.com/watch?v=nDqYc-MfaeM
+- Instalamos php y phpmyadmin: https://www.youtube.com/watch?v=R4TEue8Vx9Q
+- Configuración de Django: https://www.youtube.com/watch?v=SNEj8r8s3D4
+
+Unidad 3: 
+- Instalación de MongoDB: https://www.youtube.com/watch?v=lMkrNZKYzXs
+- Mongo CRUD: https://www.youtube.com/watch?v=qWw37WoRjZ4
+- Pymongo vs MongoEngine vs Djongo: https://www.youtube.com/watch?v=-qApTSsu_7E
+- Integración con Pymongo: https://www.youtube.com/watch?v=rfEzz1UJY1E
+- Integración con MongoEngine: https://www.youtube.com/watch?v=XiN-jyvlZ3E
+
+Unidad 4: 
+- Presentación de las tareas a realizar: https://www.youtube.com/watch?v=H9a0k-gJtgo
+- Configurar Apache en otro puerto: https://www.youtube.com/watch?v=JyBpj3x4-7o
+- Configurar NGINX para funcionar con Apache: https://www.youtube.com/watch?v=UwCotHQ_-_M
+
+### Modulo 2
+Unidad 1: Rest Api
+-  Presentación e instalación
+-  Serialización
+-  Creación de CRUD
+
+ Unidad 2: Carrito de compras.
+-  Presentación y reorganización de app
+-  https en desarrollo
+-  Selección de productos
+-  Registro de Usuario y datos de envío
+-  Checkout
+
+Unidad 3: SEO
+-  Introducción – White Hat – Black Hat
+-  Palabras claves – Optimización interna y externa
+-  Microdatos
+-  Json-Id
+-  robot.txt y sitemap.xml
+
+Unidad 4: Últimos pasos
+-  WYSIWYG - ckeditor
+-  django-simple-history
+-  https en producción
+-  Aclaración

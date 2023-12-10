@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
 from observability_workflows import views
 from django.conf.urls.static import static
+from django.urls import path, include, re_path
+from django.views.generic.base import RedirectView
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     # path('', view=views.index, name='index'),
+    re_path(r'^favicon\.ico$', favicon_view),
     path('', include('dashboards.urls')),
     path('usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls, name='admin'),
@@ -29,6 +34,8 @@ urlpatterns = [
     path('tienda/', include('tienda.urls')),
     # path('accounts/', include('registration.backends.default.urls'), name='login'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     import debug_toolbar

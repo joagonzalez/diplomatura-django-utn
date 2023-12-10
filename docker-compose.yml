@@ -1,0 +1,19 @@
+version: "3"
+services: 
+
+  # django-apache2:
+  #   build: 
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: observability-dashboards
+  #   ports:
+  #     - '8001:80'
+
+  observability-dashboards:
+    build: 
+      context: .
+      dockerfile: Dockerfile_gunicorn
+    image: joagonzalez/observability-dashboards:1.0.5-gunicorn
+    container_name: observability-dashboards-gunicorn
+    ports:
+      - '8000:8000'

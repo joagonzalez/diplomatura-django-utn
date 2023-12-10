@@ -114,40 +114,42 @@
         <li>
           {% if 'search' in page %}
           <a href="{% url 'search' %}" class="nav-link text-white active">
-          {% else %}
-          <a href="{% url 'search' %}" class="nav-link text-white">
-          {% endif %}
-            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-            Search
-          </a>
-        </li>
-        <li>
-          {% if 'landing' in page %}
-          <a href="{% url 'landing' %}" class="nav-link text-white active">
-          {% else %}
-          <a href="{% url 'landing' %}" class="nav-link text-white">
-          {% endif %}
-            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
-            Landing Page
-          </a>
-        </li>
+            {% else %}
+            <a href="{% url 'search' %}" class="nav-link text-white">
+              {% endif %}
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+              Search
+            </a>
+          </li>
+          <li>
+            {% if 'landing' in page %}
+            <a href="{% url 'landing' %}" class="nav-link text-white active">
+              {% else %}
+              <a href="{% url 'landing' %}" class="nav-link text-white">
+                {% endif %}
+                <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+                Landing Page
+              </a>
+            </li>
+        {% if request.user.is_authenticated %}
         <li>
           {% if 'admin' in page %}
-          <a href="http://localhost:8000/admin" target="_blank" class="nav-link text-white active">
+          <a href="{% url 'admin:index' %}" target="_blank" class="nav-link text-white active">
           {% else %}
-          <a href="http://localhost:8000/admin" target="_blank" class="nav-link text-white">
+          <a href="{% url 'admin:index' %}" target="_blank" class="nav-link text-white">
           {% endif %}
             <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
             Admin
           </a>
         </li>
+        {% endif %}
       </ul>
       <hr>
       <div class="dropdown">
         <a href="{% url 'login' %}" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           {% if request.user.is_authenticated %}
           <img src="https://lh3.googleusercontent.com/a/ACg8ocLZyZZMJswZGRTlwg3FVYYXhqAl7D8DThuAMM38xc2SgYM=s376-c-no" alt="" width="32" height="32" class="rounded-circle me-2">
-          <strong>Joaquin Gonzalez</strong>
+          <strong>{{ request.user }}</strong>
           {% else %}
           <img src="https://media.istockphoto.com/id/1087531642/vector/male-face-silhouette-or-icon-man-avatar-profile-unknown-or-anonymous-person-vector.jpg?s=612x612&w=0&k=20&c=FEppaMMfyIYV2HJ6Ty8tLmPL1GX6Tz9u9Y8SCRrkD-o=" alt="" width="32" height="32" class="rounded-circle me-2">
           <strong>Unkown</strong>

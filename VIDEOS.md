@@ -188,11 +188,11 @@ Unidad 1: Rest Api
 -  Checkout
 
 Unidad 3: SEO
--  Introducción – White Hat – Black Hat
--  Palabras claves – Optimización interna y externa
--  Microdatos
--  Json-Id
--  robot.txt y sitemap.xml
+- Introducción – White Hat – Black Hat: https://www.youtube.com/watch?v=ws0ZdK5OPH8
+- Palabras claves – Optimización interna y externa: https://www.youtube.com/watch?v=spf_XRBuC10
+- Microdatos: https://www.youtube.com/watch?v=oGpnP-nIlBs
+- JSON-ID: https://www.youtube.com/watch?v=E-_EvdPHlHk
+- robot.txt y sitemap.xml: https://www.youtube.com/watch?v=whhUdnc-tQg
 
 Unidad 4: Últimos pasos
 -  WYSIWYG - ckeditor

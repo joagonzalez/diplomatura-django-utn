@@ -4,3 +4,8 @@ registro de usuarios
 javascript, ajax
 seo
 uso de servidor apache
+
+Hacer incapie en apache, gunicorn, todo docker, nginx para contenido estatico y el file de nginx,
+que se usa stack para cluster de docker swarm y que se utiliza https
+
+Mencionar que en base.html se agregar meta tags para SEO

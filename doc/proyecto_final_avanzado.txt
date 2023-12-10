@@ -1,0 +1,6 @@
+html, css, css3, bootstrap, sass.
+formularios
+registro de usuarios
+javascript, ajax
+seo
+uso de servidor apache

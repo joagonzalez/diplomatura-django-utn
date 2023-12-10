@@ -55,5 +55,5 @@ RUN chown :www-data ${APP_NAME}/${APP}/static_dev/favicon.ico
 # RUN chown :www-data ${APP_NAME}/${APP}/logs 
 
 
-EXPOSE rko  di
+EXPOSE 80
 CMD ["apache2ctl", "-D", "FOREGROUND"]

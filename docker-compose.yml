@@ -1,0 +1,39 @@
+version: "3"
+services: 
+
+  http-proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - observability
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./observability_workflows/media:/var/www/media
+      - ./observability_workflows/static_dev:/var/www/static
+    networks:
+      - dmz  
+
+  # observability:
+  #   image: joagonzalez/obvservability-dashboards:1.0.5-apache2
+  #   build: 
+  #     context: .
+  #     dockerfile: ./build/apache/Dockerfile
+  #   ports:
+  #     - '8001:80'
+  #   networks:
+  #     - dmz 
+
+  observability:
+    build: 
+      context: .
+      dockerfile: ./build/Dockerfile
+    image: joagonzalez/observability-dashboards:1.0.5-gunicorn
+    ports:
+      - '8000:8000'
+    networks:
+      - dmz 
+
+networks:
+  dmz:
+    external: true

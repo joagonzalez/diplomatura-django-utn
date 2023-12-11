@@ -70,6 +70,9 @@ class Dashboards(models.Model):
     def __str__(self):
         return self.name + ' ' + str(self.dashboard_type)
     
+    def get_absolute_url(self):
+        return f"/tienda/usecase/{self.id}/"
+    
 class Group(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=200)

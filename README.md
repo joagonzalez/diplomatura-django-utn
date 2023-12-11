@@ -46,6 +46,18 @@ make sass
 ## Estructura aplicacion
 
 ## Ejecutar aplicacion
+Primero hacer un build
+
+```bash
+docker-compose build
+```
+
+Luego ejecutar
+```bash
+docker-compose up
+# daemon
+docker-compose up -d
+```
 
 ## Testing
 

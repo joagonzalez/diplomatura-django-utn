@@ -2,7 +2,7 @@ run:
 	cd observability_workflows && export DJANGO_DEBUG=1 && python manage.py runserver 8000
 
 run-prod:
-	cd observability_workflows && export DJANGO_DEBUG=0 && python manage.py runserver 8000
+	cd observability_workflows/ && export DJANGO_DEBUG=1 && gunicorn --bind 0.0.0.0:8000 --workers=5 observability_workflows.wsgi
 
 migrate:
 	cd observability_workflows && python manage.py migrate

@@ -10,7 +10,7 @@ services:
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./observability_workflows/media:/var/www/media
-      - ./observability_workflows/static_dev:/var/www/static
+      - ./observability_workflows/static:/var/www/static
     networks:
       - dmz  
 

@@ -1,0 +1,45 @@
+Github repo: https://github.com/joagonzalez/diplomatura-django-utn
+
+
+DJANGO NIVEL AVANZADO
+
+Video modulo Avanzado (el de esta entrega): https://www.youtube.com/watch?v=nRhkXUBp6MQ
+Release de entrega avanzado: https://github.com/joagonzalez/diplomatura-django-utn/releases/tag/v1.9
+
+Nota: sitemap.xml no se acutalizaba en el video por que estaba en cache, limpiando anduvo ok.
+
+Sitio levantado en:
+- https://diplomatura.qwerty.com.ar
+- https://adminer.diplomatura.qwerty.com.ar
+
+Changelog:
+
+SEO
+  Meta tags
+  robots.txt
+  sitemap.xml
+
+Puesta en produccion
+  Django sobre Apache2
+  Django dockerizado
+  Integracion con NGINX para contenido estatico
+  Integración con GUNICORN como WSGI server en docker containers
+  SEO
+  Reemplazo de SQLITE por MariaDB con adminer
+  Certificados SSL en VPS
+
+------------------------
+------------------------
+
+DJANGO NIVEL INTERMEDIO
+
+Video del modulo anterior (intermedio): https://www.youtube.com/watch?v=S4OpUe-jS6E
+Release de entraga intermedio: https://github.com/joagonzalez/diplomatura-django-utn/releases/tag/v1.5
+
+Changelog:
+  Landing page con Greensock
+  JQuery y Ajax para busqueda de dashboards y autocomplete de campo input
+  Evento de pagina intermedia en admin para export en JSON de campos de tabla DB
+  Sistema de registro de ususarios con uso de variables de sesion para cambiar vistas Front End
+  CRUD de base de datos de dashboards
+

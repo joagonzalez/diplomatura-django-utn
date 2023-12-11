@@ -57,12 +57,15 @@ services:
     depends_on:
       - db
     environment:
-      ADMINER_DEFAULT_SERVER: db
+      - ADMINER_DEFAULT_SERVER=db
+      - VIRTUAL_HOST=adminer.diplomatura.qwerty.com.ar
+      - LETSENCRYPT_HOST=adminer.diplomatura.qwerty.com.ar
+      - LETSENCRYPT_EMAIL=joagonzalez@gmail.com
     ports:
       - 8080:8080
     networks:
       - dmz 
-  
+ 
   # observability-apache:
   #   image: joagonzalez/obvservability-dashboards:1.0.6-apache2
   #   build: 

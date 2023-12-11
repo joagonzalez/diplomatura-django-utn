@@ -26,8 +26,12 @@ WORKDIR ${APP_DIR}
 RUN apt-get update
 RUN apt-get install -y apt-utils vim curl make
 RUN apt-get -y install python3
+RUN apt-get install -y python3-dev libmysqlclient-dev
 RUN ln /usr/bin/python3 /usr/bin/python 
 RUN apt-get -y install python3-pip 
+
+ENV MYSQLCLIENT_CFLAGS=-I/usr/include/mysql
+ENV MYSQLCLIENT_LDFLAGS=-L/usr/lib/x86_64-linux-gnu
 
 # install app libraries
 RUN pip install -r requirements.txt 

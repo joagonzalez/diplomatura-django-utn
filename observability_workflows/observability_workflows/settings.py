@@ -18,6 +18,11 @@ mimetypes.add_type("text/javascript", ".js", True)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Workaround DB
+import pymysql
+pymysql.install_as_MySQLdb()
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -90,13 +95,28 @@ WSGI_APPLICATION = 'observability_workflows.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+DB_TYPE_SQLITE = bool(int(os.getenv(key='DB_TYPE_SQLITE', default=0)))
+DB_HOSTNAME = os.getenv(key='DB_HOSTNAME', default='db')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+if DB_TYPE_SQLITE:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'django',
+            'USER': 'adminer',
+            'PASSWORD': 'adminer',
+            'HOST': DB_HOSTNAME,
+            'PORT': '3306'
+        }
+    }
 
 
 # Password validation

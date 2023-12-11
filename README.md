@@ -43,7 +43,14 @@ make install
 make sass
 ```
 
+## Reconstruir staticfiles en carpeta seleccionada
+```bash
+python manage.py collecstatic
+```
+
 ## Estructura aplicacion
+<img src="doc/img/architecture.png" width="600">
+
 
 ## Ejecutar aplicacion
 Primero hacer un build

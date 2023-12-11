@@ -21,6 +21,7 @@ from django.urls import path, include, re_path
 from tienda.sitemap import TiendaSiteMap
 from dashboards.sitemap import DashboardsSiteMap
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic.base import TemplateView
 from django.views.generic.base import RedirectView
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
@@ -34,6 +35,7 @@ sitemaps = {
 urlpatterns = [
     # path('', view=views.index, name='index'),
     re_path(r'^favicon\.ico$', favicon_view),
+    path("robots.txt", TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
     path('', include('dashboards.urls')),
     path('usuarios/', include('usuarios.urls')),
     path('admin/', admin.site.urls, name='admin'),

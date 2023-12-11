@@ -5,6 +5,8 @@ services:
     image: nginx:latest
     ports:
       - "80:80"
+    depends_on:
+      - observability
     volumes:
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./observability_workflows/media:/var/www/media
@@ -12,20 +14,20 @@ services:
     networks:
       - dmz  
 
-  # observability-dashboards:
+  # observability:
   #   image: joagonzalez/obvservability-dashboards:1.0.5-apache2
   #   build: 
   #     context: .
-  #     dockerfile: Dockerfile
+  #     dockerfile: ./build/apache/Dockerfile
   #   ports:
   #     - '8001:80'
   #   networks:
   #     - dmz 
 
-  observability-dashboards:
+  observability:
     build: 
       context: .
-      dockerfile: Dockerfile_gunicorn
+      dockerfile: ./build/Dockerfile
     image: joagonzalez/observability-dashboards:1.0.5-gunicorn
     ports:
       - '8000:8000'

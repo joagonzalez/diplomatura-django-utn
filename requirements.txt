@@ -13,6 +13,8 @@ django-simple-captcha==0.5.20
 exceptiongroup==1.2.0
 Faker==18.11.1
 idna==3.6
+mysqlclient
+pymysql
 iniconfig==2.0.0
 isort==5.12.0
 lazy-object-proxy==1.9.0

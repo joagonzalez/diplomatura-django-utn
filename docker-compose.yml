@@ -14,26 +14,62 @@ services:
     networks:
       - dmz  
 
-  # observability:
-  #   image: joagonzalez/obvservability-dashboards:1.0.5-apache2
-  #   build: 
-  #     context: .
-  #     dockerfile: ./build/apache/Dockerfile
-  #   ports:
-  #     - '8001:80'
-  #   networks:
-  #     - dmz 
-
   observability:
     build: 
       context: .
       dockerfile: ./build/Dockerfile
-    image: joagonzalez/observability-dashboards:1.0.5-gunicorn
+    image: joagonzalez/observability-dashboards:1.0.9-mysql-gunicorn
+    environment:
+      DB_TYPE_SQLITE: 0
+      DB_HOSTNAME: db
     ports:
       - '8000:8000'
+    depends_on:
+      - db
     networks:
       - dmz 
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_USER: adminer
+      MYSQL_PASSWORD: adminer
+      MYSQL_DATABASE: django
+      MARIADB_ROOT_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - dmz 
+
+  adminer:
+    image: adminer
+    restart: always
+    depends_on:
+      - db
+    environment:
+      ADMINER_DEFAULT_SERVER: db
+    ports:
+      - 8080:8080
+    networks:
+      - dmz 
+  
+  # observability-apache:
+  #   image: joagonzalez/obvservability-dashboards:1.0.6-apache2
+  #   build: 
+  #     context: .
+  #     dockerfile: ./build/apache/Dockerfile
+  #   ports:
+  #     - '8000:80'
+  #   networks:
+  #     - dmz 
+
 
 networks:
   dmz:
     external: true
+
+volumes:
+  db_data:

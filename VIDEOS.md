@@ -176,16 +176,16 @@ Unidad 4:
 
 ### Modulo 2
 Unidad 1: Rest Api
--  Presentación e instalación
--  Serialización
--  Creación de CRUD
+- Presentación y reorganización de app: https://www.youtube.com/watch?v=e6DN442k-2U
+- Serialización: https://www.youtube.com/watch?v=FJ_XTUp9UaI
+- Creación de CRUD: https://www.youtube.com/watch?v=Pi0jOFp6z5Y
 
- Unidad 2: Carrito de compras.
--  Presentación y reorganización de app
--  https en desarrollo
--  Selección de productos
--  Registro de Usuario y datos de envío
--  Checkout
+Unidad 2: Carrito de compras.
+- Presentación y reorganización de app: https://www.youtube.com/watch?v=js57IGzJbvE
+- HTTPS en desarrollo: https://www.youtube.com/watch?v=fQ8dt4LIqWs
+- Selección de productos I: https://www.youtube.com/watch?v=ukG-Y8R8atU
+- Registro de usuarios y datos de envío: https://www.youtube.com/watch?v=gScX_WGzqLc
+- Checkout: https://www.youtube.com/watch?v=fF5bb1B_FHU
 
 Unidad 3: SEO
 - Introducción – White Hat – Black Hat: https://www.youtube.com/watch?v=ws0ZdK5OPH8
@@ -195,7 +195,7 @@ Unidad 3: SEO
 - robot.txt y sitemap.xml: https://www.youtube.com/watch?v=whhUdnc-tQg
 
 Unidad 4: Últimos pasos
--  WYSIWYG - ckeditor
--  django-simple-history
--  https en producción
--  Aclaración
+-  WYSIWYG - ckeditor: https://www.youtube.com/watch?v=xZf_G7WH9-U
+-  django-simple-history: https://www.youtube.com/watch?v=peB9l_tq-oM
+-  https en producción: https://www.youtube.com/watch?v=-ehT5eqRLp0
+-  Aclaración: https://www.youtube.com/watch?v=qub5dvLUtxs
